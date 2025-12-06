@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <meta name="description" content="Organic Boost Media transforms ideas into impactful digital experiences. Experts in Digital Marketing, Graphic Design, and Web Development.">
+    <meta name="keywords" content="Digital Marketing, SEO, Web Development, Graphic Design, Organic Boost Media, Pakistan">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="faviconn.png" sizes="32x32">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your Public Key (Instruction below)
+            emailjs.init("YOUR_PUBLIC_KEY_HERE"); 
+        })();
+    </script>
+    <style>
+        :root {
+    --primary: #800080; /* Purple from PDF */
+    --primary-dark: #5c005c;
+    --secondary: #2c3e50;
+    --light: #f4f4f4;
+    --dark: #1a1a1a;
+    --white: #ffffff;
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+/* Site header (page title + icon) */
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.site-header .container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+}
+.site-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: inline-block;
+}
+.site-title {
+    font-size: 1.25rem;
+    color: var(--dark);
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+.btn-nav {
+    background: var(--primary);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+.btn-nav:hover {
+    background: var(--primary-dark);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #d187d1;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-secondary:hover { background: white; color: var(--primary); }
+
+/* Common Section */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.section-subtitle {
+    margin-bottom: 50px;
+    color: #666;
+}
+
+.bg-light { background: var(--light); }
+.bg-dark { background: var(--dark); color: white; }
+.text-center { text-align: center; }
+
+/* Grid Layouts */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.col-md-6 {
+    flex: 1;
+    min-width: 300px;
+}
+
+.chart-graphic {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.chart-graphic i {
+    font-size: 5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--primary);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card .icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.service-card ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.service-card ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.service-card ul li i {
+    color: var(--primary);
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.stat-item {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.stat-item h3 { color: var(--primary); font-size: 1.5rem; }
+
+/* Team Section */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.img-wrapper {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--primary);
+    margin: 0 auto 20px;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Focus on faces */
+}
+
+.team-member h3 {
+    margin-bottom: 5px;
+}
+
+.team-member .role {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Contact */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+footer {
+    background: var(--dark);
+    color: #888;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--dark);
+    margin: 5px auto;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding-bottom: 20px;
+    }
+    
+    .nav-menu.active { left: 0; }
+    .nav-menu li { margin: 20px 0; }
+    
+    .hero h1 { font-size: 2rem; }
+    .contact-wrapper { flex-direction: column; }
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Organic Boost <span>Media</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact" class="btn-nav">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container hero-content">
+            <h1>We Transform Ideas Into Impactful <br><span>Digital Experiences</span></h1>
+            <p>We blend creativity with strategy to deliver solutions that not only look exceptional but also drive measurable results for your business.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary">Start Project</a>
+                <a href="#about" class="btn btn-secondary"><i class="fa fa-play"></i> Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="section-title">Introduction</h2>
+                    <p class="lead">We are a dynamic team of young creatives and digital experts passionate about elevating brands in the digital space.</p>
+                    <p>With expertise spanning graphic design, video editing, and digital marketing, we serve as your all-in-one solution for modern business needs. Innovation meets execution in our collaborative approach.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart-graphic">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <p>Business Growth Analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Our History</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="date">2022</span>
+                            <p>Our story began with a simple vision: to make quality digital services accessible to everyone.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="date">2023 - Present</span>
+                            <p>Grown into a trusted team serving clients internationally, from ECP project awards to BinaryHub collaborations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Vision & Mission</h3>
+                    <div class="card-box">
+                        <h4>Vision</h4>
+                        <p>To become the most trusted creative partner for businesses navigating the digital landscape.</p>
+                    </div>
+                    <div class="card-box">
+                        <h4>Mission</h4>
+                        <p>To deliver innovative, results-driven digital solutions that empower businesses to thrive online.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section services-section">
+        <div class="container">
+            <h2 class="section-title text-center">Our Services</h2>
+            <p class="text-center section-subtitle">Comprehensive solutions for your digital growth</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3>Digital Marketing</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Facebook & Google Ads</li>
+                        <li><i class="fa-solid fa-check"></i> Social Media Management</li>
+                        <li><i class="fa-solid fa-check"></i> Content Creation & Copywriting</li>
+                        <li><i class="fa-solid fa-check"></i> Lead Generation & Funnels</li>
+                        <li><i class="fa-solid fa-check"></i> Analytics & Reporting</li>
+                        <li><i class="fa-solid fa-check"></i> Influencer Marketing</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>Graphic Designing</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Logo Design & Branding</li>
+                        <li><i class="fa-solid fa-check"></i> Social Media Posts</li>
+                        <li><i class="fa-solid fa-check"></i> Flyers, Brochures & Banners</li>
+                        <li><i class="fa-solid fa-check"></i> YouTube Thumbnails</li>
+                        <li><i class="fa-solid fa-check"></i> Business Cards</li>
+                        <li><i class="fa-solid fa-check"></i> UI/UX Elements</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Website Design & Dev</li>
+                        <li><i class="fa-solid fa-check"></i> WordPress & E-Commerce</li>
+                        <li><i class="fa-solid fa-check"></i> Landing Pages</li>
+                        <li><i class="fa-solid fa-check"></i> Responsive Layouts</li>
+                        <li><i class="fa-solid fa-check"></i> Speed Optimization</li>
+                        <li><i class="fa-solid fa-check"></i> Website Maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section bg-dark text-white">
+        <div class="container">
+            <h2 class="section-title text-center">Latest Portfolio</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>ECP Projects</h3>
+                    <p>Award-winning strategies</p>
+                </div>
+                <div class="stat-item">
+                    <h3>BinaryHub</h3>
+                    <p>High-converting Ads</p>
+                </div>
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Designed Thumbnails</p>
+                </div>
+                <div class="stat-item">
+                    <h3>E-Commerce</h3>
+                    <p>Complete Setups</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section team-section">
+        <div class="container">
+            <h2 class="section-title text-center">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="img-wrapper">
+                        <img src="IMG-20250722-WA0026.jpg" alt="Amir Hassan">
+                    </div>
+                    <h3>Amir Hassan</h3>
+                    <p class="role">CEO & Strategist</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="img-wrapper">
+                        <img src="IMG-20251204-WA0036.jpg" alt="Yasir Ahmad">
+                    </div>
+                    <h3>Yasir Ahmad</h3>
+                    <p class="role">Manager</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="img-wrapper">
+                        <img src="IMG-20251204-WA0034.jpg" alt="Muhammad Kamran">
+                    </div>
+                    <h3>Muhammad Kamran</h3>
+                    <p class="role">Marketing Head</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title text-center">Get In Touch</h2>
+            <p class="text-center">Let's connect and create something amazing together!</p>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p>03498901846</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>amir034989@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-brands fa-instagram"></i>
+                        <h4>Social Media</h4>
+                        <p>a.h.a9900</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="user_name">Full Name</label>
+                            <input type="text" name="user_name" id="user_name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="user_email">Email Address</label>
+                            <input type="email" name="user_email" id="user_email" required placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" rows="5" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Organic Boost Media. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js">
+        // Mobile Menu Toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navList = document.querySelector('.nav-menu');
+
+mobileMenu.addEventListener('click', () => {
+    navList.classList.toggle('active');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('.nav-menu li a').forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('active');
+    });
+});
+
+// Contact Form Handler using EmailJS
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default refresh
+
+    // Show loading state on button
+    const btn = this.querySelector('button');
+    const originalText = btn.innerText;
+    btn.innerText = 'Sending...';
+
+    // THESE NEED TO BE REPLACED WITH YOUR ACTUAL EMAILJS CREDENTIALS
+    // 1. Service ID (e.g., 'service_xyz')
+    // 2. Template ID (e.g., 'template_abc')
+    const serviceID = 'YOUR_SERVICE_ID'; 
+    const templateID = 'YOUR_TEMPLATE_ID';
+
+    // The object keys matches the "name" attributes in your HTML input fields
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            btn.innerText = 'Sent Successfully!';
+            btn.style.backgroundColor = 'green';
+            
+            // Send specific message logic handled by EmailJS dashboard routing
+            alert('Thank you! Your message has been sent to Organic Boost Media.');
+            
+            // Reset form
+            document.getElementById('contact-form').reset();
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = ''; // Reset color
+            }, 3000);
+        }, (err) => {
+            btn.innerText = 'Error!';
+            btn.style.backgroundColor = 'red';
+            alert('Failed to send message. Please try again later. Error: ' + JSON.stringify(err));
+        });
+}); 
+    </script>
+</body>
+</html>
